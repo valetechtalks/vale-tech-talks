@@ -4,25 +4,20 @@ import { useState, CSSProperties } from "react";
 import { ChevronRight } from "lucide-react";
 
 const photos = [
-  {
-    src: "images/20250412_102644.jpg",
-  },
-  {
-    src: "images/highres_459571805.avif",
-  },
-  {
-    src: "images/PHOTO-2025-04-12-10-00-18.jpg",
-  },
-  {
-    src: "images/PHOTO-2025-08-30-11-17-52.jpg",
-  },
-  {
-    src: "images/PHOTO-2025-08-30-12-49-43.jpg",
-  }
+  { src: "images/20250412_102644.jpg" },
+  { src: "images/highres_459571805.avif" },
+  { src: "images/PHOTO-2025-04-12-10-00-18.jpg" },
+  { src: "images/PHOTO-2025-08-30-11-17-52.jpg" },
+  { src: "images/PHOTO-2025-08-30-12-49-43.jpg" },
 ];
 
 const SLIDE_LEFT_MS = 320;
 const SLIDE_BACK_MS = 450;
+
+// Visual positions for idle state — spread like photos on a table
+const TOP    = "rotate(0deg) translateY(0) scale(1)";
+const MIDDLE = "rotate(-7deg) translateX(22px) translateY(8px) scale(0.92)";
+const BOTTOM = "rotate(11deg) translateX(-10px) translateY(16px) scale(0.86)";
 
 type Phase = "idle" | "left" | "back";
 
@@ -33,15 +28,11 @@ export function PhotoStack() {
   const handleNext = () => {
     if (phase !== "idle") return;
 
-    // Phase 1: slide the top card to the left
     setPhase("left");
-
-    // Phase 2: slide it to the back; simultaneously start animating the next card forward.
-    // The stack does NOT rotate here — same DOM order is preserved so the exiting card's
-    // CSS transition continues uninterrupted from where the left animation left off.
     setTimeout(() => setPhase("back"), SLIDE_LEFT_MS);
 
-    // Phase 3: rotate the stack now that everything is in its final visual position.
+    // Rotate only after every card is already in its post-rotation visual position,
+    // so the state change causes zero visible movement.
     setTimeout(() => {
       setStack((prev) => [...prev.slice(1), prev[0]]);
       setPhase("idle");
@@ -49,7 +40,7 @@ export function PhotoStack() {
   };
 
   const getCardStyle = (index: number): CSSProperties => {
-    // ── Top card (position 0) ──────────────────────────────────────────────
+    // ── Position 0 — current top card ─────────────────────────────────────
     if (index === 0) {
       if (phase === "left") {
         return {
@@ -60,89 +51,99 @@ export function PhotoStack() {
         };
       }
       if (phase === "back") {
-        // Drop z-index so it slides behind the others; transition picks up
-        // from the browser's current computed position (end of the left slide).
+        // z-index drops immediately so it sinks behind the stack;
+        // the transform transition picks up from where the left-slide left off.
         return {
           zIndex: 1,
-          transform: "rotate(8deg) translateY(24px) scale(0.88)",
+          transform: BOTTOM,
           transition: `transform ${SLIDE_BACK_MS}ms ease-out`,
           cursor: "default",
         };
       }
-      // idle
       return {
         zIndex: 30,
-        transform: "rotate(0deg) translateY(0) scale(1)",
+        transform: TOP,
         transition: "transform 400ms ease-out",
         cursor: "pointer",
       };
     }
 
-    // ── Next card (position 1) ─────────────────────────────────────────────
+    // ── Position 1 — will become the new top ──────────────────────────────
     if (index === 1) {
       if (phase === "back") {
-        // Start moving to the top while the exiting card is still animating
+        // Animate to the top position in parallel with the exiting card.
         return {
           zIndex: 20,
-          transform: "rotate(0deg) translateY(0) scale(1)",
+          transform: TOP,
           transition: "transform 400ms ease-out",
         };
       }
       return {
         zIndex: 20,
-        transform: "rotate(4deg) translateY(12px) scale(0.94)",
+        transform: MIDDLE,
         transition: "transform 400ms ease",
       };
     }
 
-    // ── Third card (position 2) ────────────────────────────────────────────
+    // ── Position 2 — will become the new middle ────────────────────────────
     if (index === 2) {
+      if (phase === "back") {
+        // Pre-animate to the middle position so the stack rotation at the end
+        // finds this card already in place — no visible jump.
+        return {
+          zIndex: 10,
+          transform: MIDDLE,
+          transition: "transform 400ms ease",
+        };
+      }
       return {
         zIndex: 10,
-        transform: "rotate(8deg) translateY(24px) scale(0.88)",
+        transform: BOTTOM,
         transition: "transform 400ms ease",
       };
+    }
+
+    // ── Position 3 — will become the new bottom ────────────────────────────
+    if (index === 3) {
+      if (phase === "back") {
+        // Pre-position at the bottom (no transition) while staying invisible,
+        // so it's already in place when the stack rotates and it becomes visible.
+        return {
+          zIndex: 0,
+          opacity: 0,
+          transform: BOTTOM,
+          transition: "none",
+        };
+      }
+      return { zIndex: 0, opacity: 0, pointerEvents: "none" };
     }
 
     return { zIndex: 0, opacity: 0, pointerEvents: "none" };
   };
 
-  // Caption and controls follow the next card during the back phase
-  const activeDisplayIndex = phase === "back" ? 1 : 0;
-  const activePhoto = stack[activeDisplayIndex];
   const activeIndex = photos.indexOf(stack[0]);
 
   return (
     <div className="flex flex-col items-center gap-12">
-      {/* Card stack — always renders the same 4 DOM elements in the same order */}
+      {/* Card stack — always renders the same DOM elements in the same order */}
       <div className="relative" style={{ width: 500, height: 375 }}>
         {stack.slice(0, 4).map((photo, index) => (
           <div
-            key={photo.caption}
+            key={photo.src}
             className="absolute inset-0 rounded-2xl overflow-hidden border border-border shadow-2xl select-none group"
             style={getCardStyle(index)}
             onClick={index === 0 && phase === "idle" ? handleNext : undefined}
           >
             <img
               src={photo.src}
-              alt={photo.caption}
+              alt=""
               className="w-full h-full object-cover"
               draggable={false}
             />
 
-            {/* Hover overlay — only on the interactive top card */}
+            {/* Hover overlay */}
             {index === 0 && phase === "idle" && (
               <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-            )}
-
-            {/* Caption — follows whichever card is visually on top */}
-            {index === activeDisplayIndex && (
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-5">
-                <p className="text-white font-semibold text-sm">
-                  {activePhoto.caption}
-                </p>
-                <p className="text-white/60 text-xs mt-1">{activePhoto.date}</p>
-              </div>
             )}
 
             {/* Hover hint */}
