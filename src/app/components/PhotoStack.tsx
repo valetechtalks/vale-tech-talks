@@ -5,35 +5,20 @@ import { ChevronRight } from "lucide-react";
 
 const photos = [
   {
-    src: "https://picsum.photos/seed/vtt-talk-1/640/480",
-    caption: "Vale Tech Talks #40",
-    date: "Março 2024",
+    src: "images/20250412_102644.jpg",
   },
   {
-    src: "https://picsum.photos/seed/vtt-kubernetes/640/480",
-    caption: "Workshop Kubernetes",
-    date: "Fevereiro 2024",
+    src: "images/highres_459571805.avif",
   },
   {
-    src: "https://picsum.photos/seed/vtt-networking/640/480",
-    caption: "Sessão de Networking",
-    date: "Janeiro 2024",
+    src: "images/PHOTO-2025-04-12-10-00-18.jpg",
   },
   {
-    src: "https://picsum.photos/seed/vtt-sourcing/640/480",
-    caption: "Palestra Event Sourcing",
-    date: "Dezembro 2023",
+    src: "images/PHOTO-2025-08-30-11-17-52.jpg",
   },
   {
-    src: "https://picsum.photos/seed/vtt-career/640/480",
-    caption: "Painel: Carreira em Tech",
-    date: "Novembro 2023",
-  },
-  {
-    src: "https://picsum.photos/seed/vtt-feevale/640/480",
-    caption: "Vale Tech Talks na Feevale",
-    date: "Outubro 2023",
-  },
+    src: "images/PHOTO-2025-08-30-12-49-43.jpg",
+  }
 ];
 
 const SLIDE_LEFT_MS = 320;

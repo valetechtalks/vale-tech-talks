@@ -20,105 +20,106 @@ import { PhotoStack } from "./components/PhotoStack";
 const navigation = [
   { name: "Sobre", href: "#about" },
   { name: "Local", href: "#location" },
-  { name: "Speakers", href: "#speakers" },
-  { name: "Programação", href: "#schedule" },
+  // { name: "Speakers", href: "#speakers" },
+  // { name: "Programação", href: "#schedule" },
   { name: "Fotos", href: "#photos" },
   { name: "Patrocinadores", href: "#sponsors" },
 ];
 
-const speakers = [
-  {
-    name: "Vinícius Almeida",
-    role: "Software Engineer",
-    specialty: "Backend & Event Sourcing",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=vinicius&backgroundColor=6366f1",
-    social: {
-      linkedin: "#",
-      github: "#",
-      twitter: "#",
-    },
-  },
-  {
-    name: "Lucas Riboli",
-    role: "Cloud Engineer",
-    specialty: "Kubernetes & DevOps",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=lucas&backgroundColor=8b5cf6",
-    social: {
-      linkedin: "#",
-      github: "#",
-      twitter: "#",
-    },
-  },
-  {
-    name: "Tjeimi Kiewel",
-    role: "UX Designer",
-    specialty: "Product Design & Research",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=tjeimi&backgroundColor=ec4899",
-    social: {
-      linkedin: "#",
-      github: "#",
-      twitter: "#",
-    },
-  },
-];
+const speakers = [];
+const schedule = [];
 
-const schedule = [
-  {
-    time: "09:00",
-    title: "Credenciamento & Coffee",
-    description: "Networking e café da manhã",
-    icon: Coffee,
-    type: "break",
-  },
-  {
-    time: "09:15",
-    title: "Event Sourcing na Prática",
-    description: "Como implementar event sourcing em aplicações reais",
-    speaker: "Vinícius Almeida",
-    icon: Mic,
-    type: "talk",
-  },
-  {
-    time: "10:05",
-    title: "Kubernetes Operators",
-    description: "Automatizando operações complexas no Kubernetes",
-    speaker: "Lucas Riboli",
-    icon: Mic,
-    type: "talk",
-  },
-  {
-    time: "10:55",
-    title: "Transição de Carreira em Tech",
-    description: "Painel com profissionais que fizeram transição para TI",
-    speaker: "Tjeimi Kiewel, Matheus Martini, Jade Oliveira",
-    icon: MessageSquare,
-    type: "panel",
-  },
-  {
-    time: "12:00",
-    title: "Networking & Encerramento",
-    description: "Oportunidade para trocar ideias e fazer conexões",
-    icon: Users,
-    type: "break",
-  },
-];
+// const speakers = [
+//   {
+//     name: "Vinícius Almeida",
+//     role: "Software Engineer",
+//     specialty: "Backend & Event Sourcing",
+//     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=vinicius&backgroundColor=6366f1",
+//     social: {
+//       linkedin: "#",
+//       github: "#",
+//       twitter: "#",
+//     },
+//   },
+//   {
+//     name: "Lucas Riboli",
+//     role: "Cloud Engineer",
+//     specialty: "Kubernetes & DevOps",
+//     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=lucas&backgroundColor=8b5cf6",
+//     social: {
+//       linkedin: "#",
+//       github: "#",
+//       twitter: "#",
+//     },
+//   },
+//   {
+//     name: "Tjeimi Kiewel",
+//     role: "UX Designer",
+//     specialty: "Product Design & Research",
+//     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=tjeimi&backgroundColor=ec4899",
+//     social: {
+//       linkedin: "#",
+//       github: "#",
+//       twitter: "#",
+//     },
+//   },
+// ];
+
+// const schedule = [
+//   {
+//     time: "09:00",
+//     title: "Credenciamento & Coffee",
+//     description: "Networking e café da manhã",
+//     icon: Coffee,
+//     type: "break",
+//   },
+//   {
+//     time: "09:15",
+//     title: "Event Sourcing na Prática",
+//     description: "Como implementar event sourcing em aplicações reais",
+//     speaker: "Vinícius Almeida",
+//     icon: Mic,
+//     type: "talk",
+//   },
+//   {
+//     time: "10:05",
+//     title: "Kubernetes Operators",
+//     description: "Automatizando operações complexas no Kubernetes",
+//     speaker: "Lucas Riboli",
+//     icon: Mic,
+//     type: "talk",
+//   },
+//   {
+//     time: "10:55",
+//     title: "Transição de Carreira em Tech",
+//     description: "Painel com profissionais que fizeram transição para TI",
+//     speaker: "Tjeimi Kiewel, Matheus Martini, Jade Oliveira",
+//     icon: MessageSquare,
+//     type: "panel",
+//   },
+//   {
+//     time: "12:00",
+//     title: "Networking & Encerramento",
+//     description: "Oportunidade para trocar ideias e fazer conexões",
+//     icon: Users,
+//     type: "break",
+//   },
+// ];
 
 const sponsors = [
   {
     name: "Universidade Feevale",
-    tier: "Gold",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Feevale_Logo.svg/320px-Feevale_Logo.svg.png",
+    logo: "/images/feevale.svg",
   },
   {
     name: "Diretório Acadêmico da Computação",
-    tier: "Silver",
-    logo: null,
+    logo: "/images/dac.jpg"
   },
 ];
 
 const stats = [
   { label: "Membros", value: "1.050+" },
-  { label: "Eventos", value: "40+" },
+  { label: "Eventos", value: "12+" },
   { label: "Avaliação", value: "4.9/5" },
 ];
 
@@ -351,12 +352,13 @@ export default function Home() {
       </section>
 
       {/* Speakers Section */}
-      <section id="speakers" className="py-24 border-t border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              <span className="gradient-text">Speakers</span>
-            </h2>
+      {speakers.length > 0 && (
+        <section id="speakers" className="py-24 border-t border-border">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+                <span className="gradient-text">Speakers</span>
+              </h2>
             <p className="text-muted max-w-2xl mx-auto">
               Profissionais experientes compartilhando conhecimento e
               experiências com a comunidade.
@@ -404,15 +406,16 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section>)}
 
       {/* Schedule Section */}
-      <section id="schedule" className="py-24 border-t border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              <span className="gradient-text">Programação</span>
-            </h2>
+      {schedule.length > 0 && (
+        <section id="schedule" className="py-24 border-t border-border">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+                <span className="gradient-text">Programação</span>
+              </h2>
             <p className="text-muted max-w-2xl mx-auto">
               Confira a agenda do próximo evento. Horários sujeitos a alteração.
             </p>
@@ -424,6 +427,7 @@ export default function Home() {
               <div className="absolute left-8 top-0 bottom-0 w-px bg-border" />
 
               <div className="space-y-8">
+                {/* @ts-ignore */}
                 {schedule.map((item, index) => (
                   <div key={index} className="relative flex gap-6">
                     {/* Timeline dot */}
@@ -479,15 +483,16 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section>)}
 
       {/* Sponsors Section */}
-      <section id="sponsors" className="py-24 border-t border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              <span className="gradient-text">Patrocinadores</span>
-            </h2>
+      {sponsors.length > 0 && (
+        <section id="sponsors" className="py-24 border-t border-border">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+                <span className="gradient-text">Patrocinadores</span>
+              </h2>
             <p className="text-muted max-w-2xl mx-auto">
               Empresas e instituições que apoiam nossa comunidade e tornam
               nossos eventos possíveis.
@@ -500,17 +505,6 @@ export default function Home() {
                 key={sponsor.name}
                 className="group rounded-2xl border border-border bg-card/50 p-8 text-center hover:border-accent/50 transition-all hover:glow"
               >
-                <div className="mb-4">
-                  <span
-                    className={`inline-flex text-xs font-medium px-3 py-1 rounded-full ${
-                      sponsor.tier === "Gold"
-                        ? "bg-yellow-500/10 text-yellow-400"
-                        : "bg-gray-500/10 text-gray-400"
-                    }`}
-                  >
-                    {sponsor.tier}
-                  </span>
-                </div>
                 <div className="h-16 flex items-center justify-center mb-4">
                   {sponsor.logo ? (
                     <img
@@ -546,7 +540,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section>
+      </section>)}
 
       {/* Photos Section */}
       <section id="photos" className="py-24 border-t border-border">
@@ -604,25 +598,6 @@ export default function Home() {
             <div className="flex items-center gap-2">
               <Code className="h-6 w-6 text-accent" />
               <span className="text-lg font-semibold">Vale Tech Talks</span>
-            </div>
-
-            <div className="flex items-center gap-6">
-              <a
-                href="https://www.meetup.com/valetechtalks/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted hover:text-foreground transition-colors"
-              >
-                Meetup
-              </a>
-              <a
-                href="https://github.com/valetechtalks"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted hover:text-foreground transition-colors"
-              >
-                <Github className="h-5 w-5" />
-              </a>
             </div>
 
             <p className="text-sm text-muted">
