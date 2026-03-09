@@ -352,7 +352,7 @@ export default function Home() {
       </section>
 
       {/* Speakers Section */}
-      {speakers.length > 0 && (
+      {/* {speakers.length > 0 && (
         <section id="speakers" className="py-24 border-t border-border">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
@@ -406,10 +406,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>)}
+      </section>)} */}
 
       {/* Schedule Section */}
-      {schedule.length > 0 && (
+      {/* {schedule.length > 0 && (
         <section id="schedule" className="py-24 border-t border-border">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
@@ -423,14 +423,11 @@ export default function Home() {
 
           <div className="max-w-3xl mx-auto">
             <div className="relative">
-              {/* Timeline line */}
               <div className="absolute left-8 top-0 bottom-0 w-px bg-border" />
 
               <div className="space-y-8">
-                {/* @ts-ignore */}
                 {schedule.map((item, index) => (
                   <div key={index} className="relative flex gap-6">
-                    {/* Timeline dot */}
                     <div
                       className={`relative z-10 flex-shrink-0 w-16 h-16 rounded-xl flex items-center justify-center ${
                         item.type === "talk"
@@ -443,7 +440,6 @@ export default function Home() {
                       <item.icon className="h-6 w-6" />
                     </div>
 
-                    {/* Content */}
                     <div
                       className={`flex-1 rounded-xl border border-border p-6 ${
                         item.type === "break" ? "bg-card/30" : "bg-card/50"
@@ -483,7 +479,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>)}
+      </section>)} */}
 
       {/* Sponsors Section */}
       {sponsors.length > 0 && (

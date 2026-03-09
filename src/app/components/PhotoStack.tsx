@@ -7,7 +7,8 @@ const photos = [
   { src: "images/20250412_102644.jpg" },
   { src: "images/highres_459571805.avif" },
   { src: "images/PHOTO-2025-04-12-10-00-18.jpg" },
-  { src: "images/PHOTO-2025-08-30-11-17-52.jpg" },
+  { src: "images/PHOTO-2025-08-30-12-49-27.jpg" },
+  { src: "images/highres_459571810.avif" },
   { src: "images/PHOTO-2025-08-30-12-49-43.jpg" },
 ];
 
