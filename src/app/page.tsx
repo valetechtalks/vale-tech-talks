@@ -521,7 +521,7 @@ export default function Home() {
       </section>)}
 
       {/* Photos Section */}
-      <section id="photos" className="py-24 border-t border-border">
+      <section id="photos" className="py-24 border-t border-border overflow-x-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -533,7 +533,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center px-8 sm:px-0">
             <PhotoStack />
           </div>
         </div>

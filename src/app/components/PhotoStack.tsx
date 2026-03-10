@@ -125,9 +125,9 @@ export function PhotoStack() {
   const activeIndex = photos.indexOf(stack[0]);
 
   return (
-    <div className="flex flex-col items-center gap-12">
+    <div className="flex flex-col items-center gap-12 w-full">
       {/* Card stack — always renders the same DOM elements in the same order */}
-      <div className="relative" style={{ width: 500, height: 375 }}>
+      <div className="relative w-full max-w-[500px]" style={{ aspectRatio: "4/3" }}>
         {stack.slice(0, 4).map((photo, index) => (
           <div
             key={photo.src}
