@@ -279,8 +279,7 @@ export default function Home() {
               <span className="gradient-text">Localização</span>
             </h2>
             <p className="text-muted max-w-2xl mx-auto">
-              Nossos eventos acontecem em Novo Hamburgo, no coração do Vale do
-              Sinos.
+              Nossos eventos acontecem em Novo Hamburgo, na Universidade Feevale.
             </p>
           </div>
 
@@ -298,8 +297,6 @@ export default function Home() {
                     RS-239, 2755 - Vila Nova
                     <br />
                     Novo Hamburgo, RS
-                    <br />
-                    Salão de Exposições - Prédio Arenito
                   </p>
                 </div>
               </div>
@@ -499,14 +496,14 @@ export default function Home() {
             {sponsors.map((sponsor) => (
               <div
                 key={sponsor.name}
-                className="group rounded-2xl border border-border bg-card/50 p-8 text-center hover:border-accent/50 transition-all hover:glow"
+                className="group rounded-2xl border border-border bg-card/50 p-8 text-center hover:border-accent/50 transition-all hover:glow m"
               >
-                <div className="h-16 flex items-center justify-center mb-4">
+                <div className="h-32 flex items-center justify-center mb-4">
                   {sponsor.logo ? (
                     <img
                       src={sponsor.logo}
                       alt={sponsor.name}
-                      className="max-h-16 max-w-full object-contain filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity"
+                      className="max-h-32 max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
                     />
                   ) : (
                     <span className="text-2xl font-bold text-muted group-hover:text-foreground transition-colors">
@@ -517,23 +514,8 @@ export default function Home() {
                     </span>
                   )}
                 </div>
-                <h3 className="text-lg font-medium text-muted group-hover:text-foreground transition-colors">
-                  {sponsor.name}
-                </h3>
               </div>
             ))}
-          </div>
-
-          <div className="mt-16 text-center">
-            <p className="text-muted mb-6">
-              Quer patrocinar o Vale Tech Talks?
-            </p>
-            <a
-              href="mailto:contato@valetechtalks.com"
-              className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-base font-medium text-foreground hover:bg-card hover:border-accent/50 transition-all"
-            >
-              Entre em contato
-            </a>
           </div>
         </div>
       </section>)}
