@@ -333,10 +333,9 @@ export default function Home() {
             <div className="relative rounded-2xl overflow-hidden border border-border glow">
               <div className="aspect-video bg-card">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3466.7844607925855!2d-51.1287!3d-29.6783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951943c0c4d0f7b7%3A0x5d0f0c0f0c0f0c0f!2sUniversidade%20Feevale!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.6594174114894!2d-51.121675408960485!3d-29.663850629765037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951943931e5bed2f%3A0xc0d78c5c5ba599b5!2sFeevale%20University%20-%20Campus%20II!5e1!3m2!1sen!2sus!4v1773106623951!5m2!1sen!2sus"
                   width="100%"
                   height="100%"
-                  style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
