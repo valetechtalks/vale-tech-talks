@@ -11,22 +11,25 @@ Meetup group: `https://www.meetup.com/valetechtalks/`
 
 ## Tech Stack
 
-- **Framework**: Next.js 15 (App Router) with `output: "export"` — fully static, no server-side runtime
+- **Framework**: Next.js 16 (App Router) with `output: "export"` — fully static, no server-side runtime
 - **Language**: TypeScript 5
 - **Styling**: Tailwind CSS 3 with a custom dark theme
 - **Icons**: lucide-react
-- **React**: 19
-- **Dev server**: `next dev --turbopack`
+- **React**: 19.2
+- **Package manager**: pnpm 10.32.1
+- **Node.js**: 24.14.0 LTS (pinned via `mise.toml`)
+- **Dev server**: `next dev` (Turbopack is the default in Next.js 16)
 
 ---
 
 ## Setup
 
 ```bash
-npm install
-npm run dev       # starts dev server at http://localhost:3000
-npm run build     # produces static export in /out
-npm run lint
+mise install      # installs Node 24.14.0 and pnpm 10.32.1
+pnpm install
+pnpm dev          # starts dev server at http://localhost:3000
+pnpm build        # produces static export in /out
+pnpm lint
 ```
 
 ---
