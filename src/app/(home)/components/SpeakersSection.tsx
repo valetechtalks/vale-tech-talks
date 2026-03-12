@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Linkedin, Github, Twitter } from "lucide-react";
 
 const speakers = [
@@ -60,9 +61,11 @@ export function SpeakersSection() {
             >
               <div className="relative mx-auto w-32 h-32 mb-6">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity blur-xl" />
-                <img
+                <Image
                   src={speaker.image}
                   alt={speaker.name}
+                  width={128}
+                  height={128}
                   className="relative w-32 h-32 rounded-full bg-card border-2 border-border group-hover:border-accent/50 transition-colors"
                 />
               </div>

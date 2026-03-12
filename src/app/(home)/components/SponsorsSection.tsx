@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const sponsors = [
   {
     name: "Universidade Feevale",
@@ -33,11 +35,14 @@ export function SponsorsSection() {
             >
               <div className="h-32 flex items-center justify-center mb-4">
                 {sponsor.logo ? (
-                  <img
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    className="max-h-32 max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
-                  />
+                  <div className="relative h-32 w-full">
+                    <Image
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      fill
+                      className="object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                    />
+                  </div>
                 ) : (
                   <span className="text-2xl font-bold text-muted group-hover:text-foreground transition-colors">
                     {sponsor.name

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, CSSProperties } from "react";
+import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 
 const photos = [
@@ -135,10 +136,11 @@ export function PhotoStack() {
             style={getCardStyle(index)}
             onClick={index === 0 && phase === "idle" ? handleNext : undefined}
           >
-            <img
+            <Image
               src={photo.src}
               alt=""
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
               draggable={false}
             />
 
