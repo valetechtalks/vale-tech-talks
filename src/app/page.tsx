@@ -166,13 +166,18 @@ export default function Home() {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-32 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-4 py-2 mb-8">
+          <a
+            href="https://forms.gle/E5jitMFcPAAm8Xhv6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-4 py-2 mb-8 transition-all hover:border-green-300 hover:scale-105"
+          >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
             </span>
-            <span className="text-sm text-muted">Próximo evento em breve</span>
-          </div>
+            <span className="text-sm text-muted">Call for Papers aberto para o próximo evento</span>
+          </a>
 
           <h1 className="text-5xl sm:text-7xl font-bold tracking-tight mb-6">
             <span className="gradient-text">Vale Tech Talks</span>
