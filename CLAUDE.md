@@ -30,6 +30,7 @@ pnpm install
 pnpm dev          # starts dev server at http://localhost:3000
 pnpm build        # produces static export in /out
 pnpm lint
+pnpm typecheck   # checks TypeScript without emitting files
 ```
 
 ---

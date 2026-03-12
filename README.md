@@ -31,6 +31,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 | `pnpm build` | Build for production (outputs to `/out`) |
 | `pnpm start` | Serve the static build locally (`/out`) |
 | `pnpm lint` | Run ESLint |
+| `pnpm typecheck` | Check TypeScript types without emitting files |
 
 ## Stack
 
