@@ -29,7 +29,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 |---|---|
 | `pnpm dev` | Start the development server (Turbopack) |
 | `pnpm build` | Build for production (outputs to `/out`) |
-| `pnpm start` | Start the production server |
+| `pnpm start` | Serve the static build locally (`/out`) |
 | `pnpm lint` | Run ESLint |
 
 ## Stack

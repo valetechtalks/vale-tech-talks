@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "serve out",
     "lint": "eslint ."
   },
   "dependencies": {
@@ -26,6 +26,7 @@
     "eslint": "^9.16.0",
     "eslint-config-next": "^16.1.6",
     "postcss": "^8.4.49",
+    "serve": "^14.2.6",
     "tailwindcss": "^3.4.16",
     "typescript": "^5.7.0"
   }
