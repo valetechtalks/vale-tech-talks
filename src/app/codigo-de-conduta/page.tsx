@@ -3,9 +3,36 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Código de Conduta - Vale Tech Talks",
+  title: "Código de Conduta",
   description:
-    "Código de conduta do Vale Tech Talks. Todos os participantes, palestrantes, patrocinadores e voluntários precisam concordar com este código.",
+    "Código de conduta do Vale Tech Talks. Todos os participantes, palestrantes, patrocinadores e voluntários precisam concordar com este código de conduta para garantir um ambiente seguro e livre de assédio.",
+  keywords: [
+    "código de conduta",
+    "Vale Tech Talks",
+    "anti-assédio",
+    "diversidade",
+    "inclusão",
+    "comunidade",
+    "meetup",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: "https://valetechtalks.com.br/codigo-de-conduta",
+    siteName: "Vale Tech Talks",
+    title: "Código de Conduta - Vale Tech Talks",
+    description:
+      "Código de conduta do Vale Tech Talks. Todos os participantes, palestrantes, patrocinadores e voluntários precisam concordar com este código para garantir um ambiente seguro e livre de assédio.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Código de Conduta - Vale Tech Talks",
+    description:
+      "Código de conduta do Vale Tech Talks para garantir um ambiente seguro e livre de assédio para todos os participantes.",
+  },
+  alternates: {
+    canonical: "https://valetechtalks.com.br/codigo-de-conduta",
+  },
 };
 
 export default function CodigoDeConduta() {
