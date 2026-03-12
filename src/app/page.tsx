@@ -18,12 +18,13 @@ import {
 import { PhotoStack } from "./components/PhotoStack";
 
 const navigation = [
-  { name: "Sobre", href: "#about" },
-  { name: "Local", href: "#location" },
+  { name: "Sobre", href: "#sobre" },
+  { name: "Local", href: "#localizacao" },
   // { name: "Speakers", href: "#speakers" },
-  // { name: "Programação", href: "#schedule" },
-  { name: "Fotos", href: "#photos" },
-  { name: "Patrocinadores", href: "#sponsors" },
+  // { name: "Programação", href: "#programacao" },
+  { name: "Fotos", href: "#fotos" },
+  { name: "Patrocinadores", href: "#patrocinadores" },
+  { name: "Código de Conduta", href: "/codigo-de-conduta" },
 ];
 
 const speakers = [];
@@ -194,7 +195,7 @@ export default function Home() {
               <ExternalLink className="h-4 w-4" />
             </a>
             <a
-              href="#about"
+              href="#sobre"
               className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-base font-medium text-foreground hover:bg-card transition-colors"
             >
               Saiba mais
@@ -222,7 +223,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 border-t border-border">
+      <section id="sobre" className="py-24 border-t border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -272,7 +273,7 @@ export default function Home() {
       </section>
 
       {/* Location Section */}
-      <section id="location" className="py-24 border-t border-border">
+      <section id="localizacao" className="py-24 border-t border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -477,9 +478,28 @@ export default function Home() {
         </div>
       </section>)} */}
 
+      {/* Photos Section */}
+      <section id="fotos" className="py-24 border-t border-border overflow-x-hidden">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              <span className="gradient-text">Fotos</span>
+            </h2>
+            <p className="text-muted max-w-2xl mx-auto">
+              Registros dos nossos eventos. Clique nas fotos para navegar pela
+              galeria.
+            </p>
+          </div>
+
+          <div className="flex justify-center px-8 sm:px-0">
+            <PhotoStack />
+          </div>
+        </div>
+      </section>
+
       {/* Sponsors Section */}
       {sponsors.length > 0 && (
-        <section id="sponsors" className="py-24 border-t border-border">
+        <section id="patrocinadores" className="py-24 border-t border-border">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -518,25 +538,6 @@ export default function Home() {
           </div>
         </div>
       </section>)}
-
-      {/* Photos Section */}
-      <section id="photos" className="py-24 border-t border-border overflow-x-hidden">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              <span className="gradient-text">Fotos</span>
-            </h2>
-            <p className="text-muted max-w-2xl mx-auto">
-              Registros dos nossos eventos. Clique nas fotos para navegar pela
-              galeria.
-            </p>
-          </div>
-
-          <div className="flex justify-center px-8 sm:px-0">
-            <PhotoStack />
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-24 border-t border-border">
