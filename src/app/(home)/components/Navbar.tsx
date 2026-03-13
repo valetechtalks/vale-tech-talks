@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 "use client";
 
 import { useState } from "react";
@@ -20,7 +21,7 @@ export function Navbar() {
     <nav className="fixed top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <a href="#" className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
             <Code className="h-6 w-6 text-accent" />
             <span className="text-lg font-semibold">Vale Tech Talks</span>
           </a>
