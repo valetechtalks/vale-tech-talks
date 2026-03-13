@@ -4,12 +4,12 @@ import { useState } from "react";
 import { Code, ExternalLink, Menu, X } from "lucide-react";
 
 const navigation = [
-  { name: "Sobre", href: "#sobre" },
-  { name: "Local", href: "#localizacao" },
-  // { name: "Speakers", href: "#speakers" },
-  // { name: "Programação", href: "#programacao" },
-  { name: "Fotos", href: "#fotos" },
-  { name: "Patrocinadores", href: "#patrocinadores" },
+  { name: "Sobre", href: "/#sobre" },
+  { name: "Local", href: "/#localizacao" },
+  // { name: "Speakers", href: "/#speakers" },
+  // { name: "Programação", href: "/#programacao" },
+  { name: "Fotos", href: "/#fotos" },
+  { name: "Patrocinadores", href: "/#patrocinadores" },
   { name: "Código de Conduta", href: "/codigo-de-conduta" },
 ];
 
