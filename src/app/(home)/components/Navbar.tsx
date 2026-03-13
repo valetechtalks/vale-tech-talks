@@ -40,7 +40,7 @@ export function Navbar() {
               href="https://www.meetup.com/valetechtalks/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent/90 transition-colors"
+              className="hidden lg:inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent/90 transition-colors"
             >
               Participar
               <ExternalLink className="h-4 w-4" />
