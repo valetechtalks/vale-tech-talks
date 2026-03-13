@@ -1,6 +1,6 @@
-import { Code, ExternalLink } from "lucide-react";
+import { Code } from "lucide-react";
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Navbar } from "@/app/(home)/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Código de Conduta",
@@ -38,26 +38,7 @@ export const metadata: Metadata = {
 export default function CodigoDeConduta() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="fixed top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-xl">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
-            <Link href="/" className="flex items-center gap-2">
-              <Code className="h-6 w-6 text-accent" />
-              <span className="text-lg font-semibold">Vale Tech Talks</span>
-            </Link>
-            <a
-              href="https://www.meetup.com/valetechtalks/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent/90 transition-colors"
-            >
-              Participar
-              <ExternalLink className="h-4 w-4" />
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Content */}
       <main className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 pt-32 pb-24">
