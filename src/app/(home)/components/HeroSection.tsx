@@ -49,7 +49,7 @@ export function HeroSection() {
           </a>
           <a
             href="#sobre"
-            className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-base font-medium text-foreground hover:bg-card transition-colors"
+            className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-base font-medium text-foreground transition-all duration-300 hover:bg-card hover:border-accent hover:shadow-[0_0_20px_rgba(99,102,241,0.3)] hover:scale-105"
           >
             Saiba mais
           </a>
