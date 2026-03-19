@@ -18,7 +18,7 @@ export function HeroSection() {
           href="https://forms.gle/E5jitMFcPAAm8Xhv6"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-4 py-2 mb-8 transition-all hover:border-green-300 hover:scale-105"
+          className="shimmer-border inline-flex items-center gap-2 rounded-full px-4 py-2 mb-8 transition-all hover:scale-105"
         >
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>

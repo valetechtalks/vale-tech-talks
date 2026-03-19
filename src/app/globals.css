@@ -20,3 +20,58 @@ body {
     box-shadow: 0 0 60px rgba(99, 102, 241, 0.15);
   }
 }
+
+/* Animated shimmering border */
+@keyframes border-spin {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.shimmer-border {
+  position: relative;
+  background: linear-gradient(#18181b, #18181b) padding-box,
+    conic-gradient(
+        from var(--angle),
+        transparent 0%,
+        transparent 30%,
+        #818cf8 45%,
+        #c084fc 50%,
+        #f472b6 55%,
+        transparent 70%,
+        transparent 100%
+      )
+      border-box;
+  border: 1px solid transparent;
+  animation: border-spin 3s linear infinite;
+}
+
+.shimmer-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--angle),
+    transparent 0%,
+    transparent 30%,
+    #818cf8 45%,
+    #c084fc 50%,
+    #f472b6 55%,
+    transparent 70%,
+    transparent 100%
+  );
+  z-index: -1;
+  opacity: 0.5;
+  filter: blur(8px);
+  animation: border-spin 3s linear infinite;
+}
