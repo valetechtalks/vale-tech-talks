@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, CSSProperties } from "react";
+import { useState, useRef, CSSProperties } from "react";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 
@@ -26,6 +26,25 @@ type Phase = "idle" | "left" | "back";
 export function PhotoStack() {
   const [stack, setStack] = useState(photos);
   const [phase, setPhase] = useState<Phase>("idle");
+  const touchStartX = useRef<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+
+    const touchEndX = e.changedTouches[0].clientX;
+    const swipeDistance = touchStartX.current - touchEndX;
+    const SWIPE_THRESHOLD = 50;
+
+    if (swipeDistance > SWIPE_THRESHOLD) {
+      handleNext();
+    }
+
+    touchStartX.current = null;
+  };
 
   const handleNext = () => {
     if (phase !== "idle") return;
@@ -128,7 +147,12 @@ export function PhotoStack() {
   return (
     <div className="flex flex-col items-center gap-12 w-full">
       {/* Card stack — always renders the same DOM elements in the same order */}
-      <div className="relative w-full max-w-[500px]" style={{ aspectRatio: "4/3" }}>
+      <div
+        className="relative w-full max-w-[500px] touch-pan-y"
+        style={{ aspectRatio: "4/3" }}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         {stack.slice(0, 4).map((photo, index) => (
           <div
             key={photo.src}
